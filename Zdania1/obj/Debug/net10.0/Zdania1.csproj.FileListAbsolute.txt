@@ -1,0 +1,15 @@
+/Users/bogdan/Desktop/vscode/Zdania1/bin/Debug/net10.0/Zdania1
+/Users/bogdan/Desktop/vscode/Zdania1/bin/Debug/net10.0/Zdania1.deps.json
+/Users/bogdan/Desktop/vscode/Zdania1/bin/Debug/net10.0/Zdania1.runtimeconfig.json
+/Users/bogdan/Desktop/vscode/Zdania1/bin/Debug/net10.0/Zdania1.dll
+/Users/bogdan/Desktop/vscode/Zdania1/bin/Debug/net10.0/Zdania1.pdb
+/Users/bogdan/Desktop/vscode/Zdania1/obj/Debug/net10.0/Zdania1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bogdan/Desktop/vscode/Zdania1/obj/Debug/net10.0/Zdania1.AssemblyInfoInputs.cache
+/Users/bogdan/Desktop/vscode/Zdania1/obj/Debug/net10.0/Zdania1.AssemblyInfo.cs
+/Users/bogdan/Desktop/vscode/Zdania1/obj/Debug/net10.0/Zdania1.csproj.CoreCompileInputs.cache
+/Users/bogdan/Desktop/vscode/Zdania1/obj/Debug/net10.0/Zdania1.sourcelink.json
+/Users/bogdan/Desktop/vscode/Zdania1/obj/Debug/net10.0/Zdania1.dll
+/Users/bogdan/Desktop/vscode/Zdania1/obj/Debug/net10.0/refint/Zdania1.dll
+/Users/bogdan/Desktop/vscode/Zdania1/obj/Debug/net10.0/Zdania1.pdb
+/Users/bogdan/Desktop/vscode/Zdania1/obj/Debug/net10.0/Zdania1.genruntimeconfig.cache
+/Users/bogdan/Desktop/vscode/Zdania1/obj/Debug/net10.0/ref/Zdania1.dll
