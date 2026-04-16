@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "33p7GAH+hjk=",
+  "success": true,
+  "projectFilePath": "/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Console/OrderFlow.Console.csproj",
+  "expectedPackageFiles": [
+    "/Users/bogdan/.nuget/packages/microsoft.netcore.app.ref/8.0.25/microsoft.netcore.app.ref.8.0.25.nupkg.sha512",
+    "/Users/bogdan/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.25/microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512",
+    "/Users/bogdan/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.25/microsoft.netcore.app.host.osx-arm64.8.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}

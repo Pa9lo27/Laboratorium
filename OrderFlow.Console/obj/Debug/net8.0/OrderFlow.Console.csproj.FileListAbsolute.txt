@@ -1,0 +1,15 @@
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Console/bin/Debug/net8.0/OrderFlow.Console
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Console/bin/Debug/net8.0/OrderFlow.Console.deps.json
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Console/bin/Debug/net8.0/OrderFlow.Console.runtimeconfig.json
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Console/bin/Debug/net8.0/OrderFlow.Console.dll
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Console/bin/Debug/net8.0/OrderFlow.Console.pdb
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Console/obj/Debug/net8.0/OrderFlow.Console.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Console/obj/Debug/net8.0/OrderFlow.Console.AssemblyInfoInputs.cache
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Console/obj/Debug/net8.0/OrderFlow.Console.AssemblyInfo.cs
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Console/obj/Debug/net8.0/OrderFlow.Console.csproj.CoreCompileInputs.cache
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Console/obj/Debug/net8.0/OrderFlow.Console.sourcelink.json
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Console/obj/Debug/net8.0/OrderFlow.Console.dll
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Console/obj/Debug/net8.0/refint/OrderFlow.Console.dll
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Console/obj/Debug/net8.0/OrderFlow.Console.pdb
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Console/obj/Debug/net8.0/OrderFlow.Console.genruntimeconfig.cache
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Console/obj/Debug/net8.0/ref/OrderFlow.Console.dll
