@@ -2,12 +2,111 @@
 using OrderFlow.Console.Events;
 using OrderFlow.Console.Models;
 using OrderFlow.Console.Services;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+
+await using var db = new OrderFlowContext();
+await db.Database.MigrateAsync();
+await DatabaseSeeder.SeedAsync(db);
+
+System.Console.WriteLine("\n========== TASK 2: CRUD ==========\n");
+
+var firstCustomer = await db.Customers.FirstAsync();
+var products = await db.Products.Take(2).ToListAsync();
+
+var newOrder = new Order
+{
+    CustomerId = firstCustomer.Id,
+    Status = OrderStatus.New,
+    CreatedAt = DateTime.Now,
+    Notes = "Test order",
+    Items = new List<OrderItem>
+    {
+        new() { ProductId = products[0].Id, Quantity = 1, UnitPrice = products[0].Price },
+        new() { ProductId = products[1].Id, Quantity = 2, UnitPrice = products[1].Price },
+    }
+};
+db.Orders.Add(newOrder);
+await db.SaveChangesAsync();
+System.Console.WriteLine($"CREATE: Added order #{newOrder.Id} with 2 items for {firstCustomer.Name}");
+
+var allOrders = await db.Orders
+    .Include(o => o.Customer)
+    .Include(o => o.Items).ThenInclude(i => i.Product)
+    .ToListAsync();
+
+System.Console.WriteLine($"\nREAD: {allOrders.Count} orders found:");
+foreach (var o in allOrders)
+{
+    var total = o.Items.Sum(i => i.UnitPrice * i.Quantity);
+    System.Console.WriteLine($"  #{o.Id} | {o.Customer.Name} | {o.Status} | {total:C} | {o.Items.Count} items");
+}
+
+var orderToUpdate = await db.Orders.FirstAsync(o => o.Status == OrderStatus.New);
+orderToUpdate.Status = OrderStatus.Processing;
+orderToUpdate.Notes = "Updated via EF Core";
+await db.SaveChangesAsync();
+System.Console.WriteLine($"\nUPDATE: Order #{orderToUpdate.Id} → Processing, Notes updated");
+
+var cancelledOrder = await db.Orders
+    .Include(o => o.Items)
+    .FirstOrDefaultAsync(o => o.Status == OrderStatus.Cancelled);
+
+if (cancelledOrder is not null)
+{
+    db.Orders.Remove(cancelledOrder);
+    await db.SaveChangesAsync();
+    System.Console.WriteLine($"\nDELETE: Removed cancelled order #{cancelledOrder.Id}");
+}
+
+System.Console.WriteLine("\nDELETE (Restrict demo): Trying to delete customer with orders...");
+try
+{
+    var customerWithOrders = await db.Customers
+        .Include(c => c.Orders)
+        .FirstAsync(c => c.Orders.Any());
+    db.Customers.Remove(customerWithOrders);
+    await db.SaveChangesAsync();
+}
+catch (Exception ex)
+{
+    System.Console.WriteLine($"  Exception caught (expected): {ex.InnerException?.Message ?? ex.Message}");
+}
+
+await EfLinqQueries.RunAllAsync(db);
+
+var newOrderForTx = await db.Orders
+    .Include(o => o.Items).ThenInclude(i => i.Product)
+    .FirstOrDefaultAsync(o => o.Status == OrderStatus.New);
+
+if (newOrderForTx is not null)
+{
+    try { await EfLinqQueries.ProcessOrderAsync(db, newOrderForTx.Id); }
+    catch { }
+}
+
+System.Console.WriteLine("\n--- Transaction failure scenario ---");
+var productLowStock = await db.Products.FirstAsync();
+productLowStock.Stock = 0;
+await db.SaveChangesAsync();
+
+var orderForFailure = new Order
+{
+    CustomerId = firstCustomer.Id,
+    Status = OrderStatus.New,
+    CreatedAt = DateTime.Now,
+    Items = new List<OrderItem> { new() { ProductId = productLowStock.Id, Quantity = 5, UnitPrice = productLowStock.Price } }
+};
+db.Orders.Add(orderForFailure);
+await db.SaveChangesAsync();
+
+try { await EfLinqQueries.ProcessOrderAsync(db, orderForFailure.Id); }
+catch { }
+
+System.Console.WriteLine("\n========== TASK 1: Events ==========");
 
 var orders = SampleData.Orders;
 var customers = SampleData.Customers;
-
-System.Console.WriteLine("========== TASK 1: Events ==========");
 
 var pipeline = new OrderPipeline();
 
