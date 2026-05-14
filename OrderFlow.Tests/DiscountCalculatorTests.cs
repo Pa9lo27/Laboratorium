@@ -23,5 +23,37 @@ public class DiscountCalculatorTests
         Assert.Equal(0m, discount);
     }
 
-    // ... решта тестів
+    
+    [Fact]
+    public void Calculate_StandardClientHighValueOrder_Returns5PercentDiscount()
+    {
+        var calculator = new DiscountCalculator();
+        var order = new Order
+        {
+            Customer = new Customer { IsVip = false },
+            Items = new List<OrderItem> { new() { UnitPrice = 2000m, Quantity = 1 } }
+        };
+    
+        var discount = calculator.Calculate(order);
+    
+        Assert.Equal(100m, discount);
+    }
+    
+    [Fact]
+    public void Calculate_VipClientHighValueOrder_Returns15PercentDiscount()
+    {
+        var calculator = new DiscountCalculator();
+        var order = new Order
+        {
+            Customer = new Customer { IsVip = true },
+            Items = new List<OrderItem> { new() { UnitPrice = 2000m, Quantity = 1 } }
+        };
+    
+        var discount = calculator.Calculate(order);
+    
+        Assert.Equal(300m, discount);
+    }
+    
+    
+    
 }
