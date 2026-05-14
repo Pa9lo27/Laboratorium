@@ -11,6 +11,7 @@ public class DiscountCalculator
         if (order.Customer.IsVip) rate += 0.10m;
         if (total > 1000m) rate += 0.05m;
         if (order.Customer.IsVip && total > 5000m) rate += 0.05m;
+        rate = Math.Min(rate, 0.25m);
         return total * rate;
     }
 }

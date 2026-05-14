@@ -82,7 +82,7 @@ public class DiscountCalculatorTests
 
         var discount = calculator.Calculate(order);
 
-        Assert.Equal(2500m, discount);
+        Assert.Equal(2000m, discount);
     }
     
 }
