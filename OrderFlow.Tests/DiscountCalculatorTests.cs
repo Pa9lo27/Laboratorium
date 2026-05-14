@@ -69,4 +69,20 @@ public class DiscountCalculatorTests
 
         Assert.Equal(1200m, discount);
     }
+    
+    [Fact]
+    public void Calculate_DiscountCappedAt25Percent()
+    {
+        var calculator = new DiscountCalculator();
+        var order = new Order
+        {
+            Customer = new Customer { IsVip = true },
+            Items = new List<OrderItem> { new() { UnitPrice = 10000m, Quantity = 1 } }
+        };
+
+        var discount = calculator.Calculate(order);
+
+        Assert.Equal(2500m, discount);
+    }
+    
 }
