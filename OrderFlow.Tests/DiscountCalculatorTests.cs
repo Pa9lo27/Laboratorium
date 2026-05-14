@@ -55,5 +55,18 @@ public class DiscountCalculatorTests
     }
     
     
-    
+    [Fact]
+    public void Calculate_VipClientOrderAbove5000_Returns20PercentDiscount()
+    {
+        var calculator = new DiscountCalculator();
+        var order = new Order
+        {
+            Customer = new Customer { IsVip = true },
+            Items = new List<OrderItem> { new() { UnitPrice = 6000m, Quantity = 1 } }
+        };
+
+        var discount = calculator.Calculate(order);
+
+        Assert.Equal(1200m, discount);
+    }
 }
