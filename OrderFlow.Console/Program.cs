@@ -195,3 +195,30 @@ System.Console.WriteLine("\n-- Safe detailed stats --");
 stats.Reset();
 Parallel.ForEach(orders, order => stats.UpdateSafe(order));
 stats.PrintSafe();
+
+System.Console.WriteLine("\n========== CURRENCY CONVERSION ==========\n");
+
+var httpClient     = new HttpClient();
+var currencyService = new CurrencyService(httpClient);
+var converter      = new OrderCurrencyConverter(currencyService);
+
+var ordersForConversion = await db.Orders
+    .Include(o => o.Customer)
+    .Include(o => o.Items)
+    .Take(3)
+    .ToListAsync();
+
+foreach (var o in ordersForConversion)
+{
+    var total = o.Items.Sum(i => i.UnitPrice * i.Quantity);
+    try
+    {
+        var usd = await converter.ConvertOrderTotalAsync(o, "USD");
+        var eur = await converter.ConvertOrderTotalAsync(o, "EUR");
+        System.Console.WriteLine($"  Order #{o.Id} | PLN: {total:C} | USD: {usd:F2} | EUR: {eur:F2}");
+    }
+    catch (CurrencyServiceException ex)
+    {
+        System.Console.WriteLine($"  Order #{o.Id} | Error: {ex.Message}");
+    }
+}

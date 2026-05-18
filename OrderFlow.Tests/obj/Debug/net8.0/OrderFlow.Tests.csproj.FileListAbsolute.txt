@@ -139,3 +139,8 @@
 /Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Tests/obj/Debug/net8.0/OrderFlow.Tests.pdb
 /Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Tests/obj/Debug/net8.0/OrderFlow.Tests.genruntimeconfig.cache
 /Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Tests/obj/Debug/net8.0/ref/OrderFlow.Tests.dll
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Tests/bin/Debug/net8.0/Castle.Core.dll
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Tests/bin/Debug/net8.0/Moq.dll
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Tests/bin/Debug/net8.0/System.Diagnostics.EventLog.dll
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Tests/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll
+/Users/bogdan/RiderProjects/ConsoleApp1/-Programowanie-zaawansowane/OrderFlow/OrderFlow.Tests/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll
